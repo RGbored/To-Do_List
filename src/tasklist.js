@@ -22,7 +22,8 @@ class TaskList extends React.Component{
             "task": item,
             "complete": false
         }
-        this.setState({Data: this.state.Data.concat(newItem)});
+        this.setState({Data: this.state.Data.concat(newItem), 
+        filteredData: this.state.filteredData.concat(newItem)});
         document.getElementById('add').value = "";
     }
     SearchCheck(task) {
