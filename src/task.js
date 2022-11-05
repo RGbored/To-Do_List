@@ -3,17 +3,23 @@ import './task.css';
 class task extends React.Component{
     render(){
         return (
-            <div class = "task">
+            <div className = "task">
                 <div>
                     <button 
-                    class = {(this.props.data.complete)?"cbox":"ucbox"} 
+                    className = {(this.props.data.complete)?"cbox":"ucbox"} 
                     onClick = {()=>{
-                        this.props.onClick(this.props.data.id)
+                        this.props.onClick(this.props.data._id)
                     }}></button>
                 </div>
                 <div
-                class = {(this.props.data.complete)?"ctext":"uctext"}>
+                className = {(this.props.data.complete)?"ctext":"uctext"}>
                     {this.props.data.task}
+                </div>
+                <div>
+                    <button  
+                    onClick = {()=>{
+                        this.props.onDelete(this.props.data._id)
+                    }}>X</button>
                 </div>
             </div>
         );
